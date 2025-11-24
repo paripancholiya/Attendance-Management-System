@@ -40,3 +40,31 @@ The objective of this project is to create a basic attendance system that:
 - **Scalability:** New features can be added easily  
 
 ---
+
+## 🧩 System Flowchart (Mermaid)
+
+```mermaid
+flowchart TD
+
+A[Start] --> B[Main Menu]
+
+B --> C{Choose Option}
+
+C -->|1. Add Student| D[Enter Roll No & Name]
+D --> E[Save to students.txt]
+E --> B
+
+C -->|2. Mark Attendance| F[Enter Roll No]
+F --> G[Check if Roll Exists]
+G -->|Yes| H[Save Attendance with Timestamp]
+G -->|No| I[Show Error: Student Not Found]
+H --> B
+I --> B
+
+C -->|3. View Students| J[Read students.txt]
+J --> B
+
+C -->|4. View Attendance| K[Read attendance.txt]
+K --> B
+
+C -->|5. Exit| L[End]        
